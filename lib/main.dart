@@ -1,4 +1,6 @@
 import 'package:amazon_clone/constants/global_variable.dart';
+import 'package:amazon_clone/features/auth/screens/auth_screen.dart';
+import 'package:amazon_clone/router.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,32 +17,44 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Amazon Clone',
       theme: ThemeData(
-          colorScheme: const ColorScheme.light(
-            primary: GlobalVariables.secondaryColor,
-          ),
-          scaffoldBackgroundColor: GlobalVariables.backgroundColor,
-          appBarTheme: const AppBarTheme(
-              elevation: 0,
-              iconTheme: IconThemeData(
-                color: Colors.black,
-              ))),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Hello'),
-          centerTitle: true,
+        colorScheme: const ColorScheme.light(
+          primary: GlobalVariables.secondaryColor,
         ),
-        body: Column(
-          children: [
-            const Center(
-              child: Text("Flutter Demo Home Page"),
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text("click"),
-            ),
-          ],
+        scaffoldBackgroundColor: GlobalVariables.backgroundColor,
+        appBarTheme: const AppBarTheme(
+          elevation: 0,
+          iconTheme: IconThemeData(
+            color: Colors.black,
+          ),
         ),
       ),
+      onGenerateRoute: ((settings) => generateRoute(settings)),
+      home: const AuthScreen(),
+      // 
+      // 
+      // home: Scaffold(
+      //   appBar: AppBar(
+      //     title: const Text('Hello'),
+      //     centerTitle: true,
+      //   ),
+      //   body: Column(
+      //     children: [
+      //       const Center(
+      //         child: Text("Flutter Demo Home Page"),
+      //       ),
+      //       Builder(
+      //         builder: (context) {
+      //           return ElevatedButton(
+      //             onPressed: () {
+      //               Navigator.pushNamed(context, AuthScreen.routeName);
+      //             },
+      //             child: const Text("click"),
+      //           );
+      //         }
+      //       ),
+      //     ],
+      //   ),
+      // ),
     );
   }
 }
