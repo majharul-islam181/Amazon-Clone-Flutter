@@ -9,6 +9,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     // ignore: sort_child_properties_last
     return ElevatedButton(
+      // ignore: sort_child_properties_last
       child: Text(text),
       onPressed: onTap,
       style: ElevatedButton.styleFrom(
